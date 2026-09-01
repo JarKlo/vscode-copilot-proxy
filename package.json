@@ -3,6 +3,7 @@
   "displayName": "VS Code Copilot Proxy",
   "publisher": "RatajikSoftware",
   "description": "Proxy requests from external agents through VS Code Copilot models",
+  "license": "MIT",
   "icon": "images/icon.png",
   "version": "0.0.18",
   "repository": {
