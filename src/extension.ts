@@ -1775,7 +1775,7 @@ async function startServer(): Promise<void> {
     }
 
     const config = vscode.workspace.getConfiguration('copilotProxy');
-    const port = config.get<number>('port', 8080);
+    const port = config.get<number>('port', 4141);
     log(`Binding to port ${port}...`, 'server');
 
     server = createServer(port);
@@ -1818,15 +1818,17 @@ async function startServer(): Promise<void> {
 
     server.on('error', (error: NodeJS.ErrnoException) => {
         if (error.code === 'EADDRINUSE') {
-            logError(`Port ${port} is already in use`, error);
-            vscode.window.showErrorMessage(`Port ${port} is already in use. Try a different port or close other VS Code instances.`);
+            log(`Port ${port} in use (another VS Code instance is serving), skipping`, 'info');
+            server = null;
+            updateStatusBar(port);
+            updateStatusPanel();
         } else {
             logError('Failed to start server', error);
             vscode.window.showErrorMessage(`Failed to start server: ${error.message}`);
+            server = null;
+            updateStatusBar();
+            updateStatusPanel();
         }
-        server = null;
-        updateStatusBar();
-        updateStatusPanel();
     });
 }
 
@@ -2714,7 +2716,7 @@ function updateStatusPanel(): void {
     if (!statusPanel) return;
 
     const config = vscode.workspace.getConfiguration('copilotProxy');
-    const port = config.get<number>('port', 8080);
+    const port = config.get<number>('port', 4141);
     const autoStart = config.get<boolean>('autoStart', true);
     const defaultModel = config.get<string>('defaultModel', '');
     const logRequestsToUI = config.get<boolean>('logRequestsToUI', false);
@@ -2761,7 +2763,7 @@ export function activate(context: vscode.ExtensionContext): void {
 
     // Log key settings
     const startupConfig = vscode.workspace.getConfiguration('copilotProxy');
-    log(`Port: ${startupConfig.get<number>('port', 8080)}`, 'info');
+    log(`Port: ${startupConfig.get<number>('port', 4141)}`, 'info');
     log(`Request timeout: ${REQUEST_TIMEOUT_MS / 1000}s`, 'info');
     log(`Keep-alive timeout: ${KEEP_ALIVE_TIMEOUT_MS / 1000}s`, 'info');
     const defaultModel = startupConfig.get<string>('defaultModel', '');
@@ -2795,11 +2797,13 @@ export function activate(context: vscode.ExtensionContext): void {
         })
     );
 
-    // Listen for model changes
+    // Listen for model changes (debounced -- Copilot fires rapid bursts)
+    let refreshDebounce: ReturnType<typeof setTimeout> | undefined;
     context.subscriptions.push(
         vscode.lm.onDidChangeChatModels(() => {
             log('Chat models changed, refreshing...');
-            refreshModels();
+            if (refreshDebounce) { clearTimeout(refreshDebounce); }
+            refreshDebounce = setTimeout(() => { refreshModels(); }, 500);
         })
     );
 

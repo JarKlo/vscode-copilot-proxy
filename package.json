@@ -1,10 +1,12 @@
 {
   "name": "vscode-copilot-proxy",
   "displayName": "VS Code Copilot Proxy",
-  "publisher": "RatajikSoftware",
+  "publisher": "WhiskersCode",
+  "author": "WhiskersCode",
   "description": "Proxy requests from external agents through VS Code Copilot models",
+  "license": "MIT",
   "icon": "images/icon.png",
-  "version": "0.0.18",
+  "version": "0.0.19",
   "repository": {
     "type": "git",
     "url": "https://github.com/gratajik/vscode-copilot-proxy"
@@ -43,7 +45,7 @@
       "properties": {
         "copilotProxy.port": {
           "type": "number",
-          "default": 8080,
+          "default": 4141,
           "description": "Port number for the proxy server"
         },
         "copilotProxy.autoStart": {

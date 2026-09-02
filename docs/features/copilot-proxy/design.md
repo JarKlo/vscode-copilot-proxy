@@ -37,7 +37,7 @@ This allows any OpenAI-compatible client to use Copilot models at no additional 
 │  (Python scripts, CLI tools, AI agents, web apps, etc.)        │
 └─────────────────────────────────────────────────────────────────┘
                               │
-                              │ HTTP (port 8080)
+                              │ HTTP (port 4141)
                               ▼
 ┌─────────────────────────────────────────────────────────────────┐
 │                    Copilot Proxy Extension                      │
@@ -249,7 +249,7 @@ res.writeHead(200, {
 
 | Setting | Type | Default | Description |
 |---------|------|---------|-------------|
-| `copilotProxy.port` | number | 8080 | HTTP server port |
+| `copilotProxy.port` | number | 4141 | HTTP server port |
 | `copilotProxy.autoStart` | boolean | true | Start server on VS Code launch |
 | `copilotProxy.defaultModel` | string | "" | Default model when not specified |
 
@@ -320,8 +320,12 @@ interface ErrorResponse {
 ### Common Error Scenarios
 
 1. **No models available**: Copilot not installed or not authenticated
-2. **Port in use**: Another process using configured port
+2. **Port in use**: Another VS Code instance already owns the server on this port -- this instance silently skips startup (info log, no error popup). Client requests still reach the existing server.
 3. **Model not found**: Requested model doesn't exist
+
+### Multi-Instance Behavior
+
+When multiple VS Code windows are open with this extension, only the first instance starts the HTTP server. Subsequent instances detect the port is already bound and skip their own server. All instances share the same Copilot backend (`vscode.lm`), so any instance's proxy can serve requests to the running server.
 
 ## Security Considerations
 

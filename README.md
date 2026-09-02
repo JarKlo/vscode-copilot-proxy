@@ -125,8 +125,7 @@ The server starts automatically by default. You can also:
 
 The status bar shows the current server state:
 
-- `$(radio-tower) Copilot Proxy: 8080` - Server running on port 8080
-- `$(circle-slash) Copilot Proxy: Off` - Server stopped
+ `$(radio-tower) Copilot Proxy: 4141` - Server running on port 4141
 
 Click the status bar item to open the interactive status panel.
 
@@ -143,20 +142,16 @@ The status panel provides:
 
 View real-time logs in VS Code's Output panel (select "Copilot Proxy" from the dropdown):
 
-- **Startup Info**: Extension version, port, endpoint URL, available models with token limits
-- **Request Logging**: Message count, character count, estimated tokens, model selection, streaming mode
-- **Response Logging**: Response size in characters and estimated tokens
-- **Error Logging**: All errors with timestamps and details
 
 Example output:
 
 ```
 [10:30:15] === Copilot Proxy Starting ===
 [10:30:15] Extension version: 0.0.2
-[10:30:15] Server started on 127.0.0.1:8080
-[10:30:15] Endpoint: http://127.0.0.1:8080/v1/chat/completions (OpenAI)
+[10:30:15] Server started on 127.0.0.1:4141
+ [10:30:15] Endpoint: http://127.0.0.1:4141/v1/chat/completions (OpenAI)
 [10:30:15] Endpoint: http://127.0.0.1:8080/v1/messages (Anthropic)
-[10:30:15]   Model: GPT-4o (gpt-4o) - max 128000 tokens
+ [10:30:15] Endpoint: http://127.0.0.1:4141/v1/messages (Anthropic)
 [10:30:15]   Model: Claude 3.5 Sonnet (claude-3.5-sonnet) - max 16384 tokens
 [10:30:20] Request: 3 messages, ~1500 chars (~375 tokens), model: gpt-4o, stream: true
 [10:30:20] Using model: GPT-4o (gpt-4o), max input: 128000 tokens

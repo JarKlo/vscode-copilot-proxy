@@ -197,7 +197,7 @@ The status bar item triggers `copilot-proxy.status` when clicked.
 
 | State | Text | Icon |
 |-------|------|------|
-| Running | `Copilot Proxy: 8080` | `$(radio-tower)` |
+| Running | `Copilot Proxy: 4141` | `$(radio-tower)` |
 | Stopped | `Copilot Proxy: Off` | `$(circle-slash)` |
 
 **Tooltip:**

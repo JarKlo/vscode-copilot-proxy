@@ -90,13 +90,13 @@ interface ToolInfo {
 **Example Requests**:
 ```bash
 # List all tools
-curl http://127.0.0.1:8080/v1/tools
+curl http://127.0.0.1:4141/v1/tools
 
 # Filter by tags
-curl "http://127.0.0.1:8080/v1/tools?tags=vscode,editor"
+curl "http://127.0.0.1:4141/v1/tools?tags=vscode,editor"
 
 # Filter by name pattern
-curl "http://127.0.0.1:8080/v1/tools?name=get_*"
+curl "http://127.0.0.1:4141/v1/tools?name=get_*"
 ```
 
 **Example Response**:
@@ -399,10 +399,10 @@ function convertToolResultMessage(msg: ChatMessage): vscode.LanguageModelChatMes
 
 ```bash
 # List available tools
-curl http://127.0.0.1:8080/v1/tools
+curl http://127.0.0.1:4141/v1/tools
 
 # Request with tools
-curl -X POST http://127.0.0.1:8080/v1/chat/completions \
+curl -X POST http://127.0.0.1:4141/v1/chat/completions \
   -H "Content-Type: application/json" \
   -d '{
     "messages": [{"role": "user", "content": "What is the weather in London?"}],
@@ -423,7 +423,7 @@ curl -X POST http://127.0.0.1:8080/v1/chat/completions \
   }'
 
 # Send tool result
-curl -X POST http://127.0.0.1:8080/v1/chat/completions \
+curl -X POST http://127.0.0.1:4141/v1/chat/completions \
   -H "Content-Type: application/json" \
   -d '{
     "messages": [
