@@ -172,7 +172,7 @@ See `docs/CONFIGURATION.md` for detailed configuration documentation.
 
 | Setting | Type | Default | Description |
 |---------|------|---------|-------------|
-| `copilotProxy.port` | number | 8080 | Server port |
+| `copilotProxy.port` | number | 4141 | Server port |
 | `copilotProxy.autoStart` | boolean | true | Auto-start on activation |
 | `copilotProxy.defaultModel` | string | "" | Default model ID |
 | `copilotProxy.logRequestsToUI` | boolean | false | Log requests to UI panel |

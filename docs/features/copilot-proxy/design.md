@@ -37,7 +37,7 @@ This allows any OpenAI-compatible client to use Copilot models at no additional 
 │  (Python scripts, CLI tools, AI agents, web apps, etc.)        │
 └─────────────────────────────────────────────────────────────────┘
                               │
-                              │ HTTP (port 8080)
+                              │ HTTP (port 4141)
                               ▼
 ┌─────────────────────────────────────────────────────────────────┐
 │                    Copilot Proxy Extension                      │
@@ -249,7 +249,7 @@ res.writeHead(200, {
 
 | Setting | Type | Default | Description |
 |---------|------|---------|-------------|
-| `copilotProxy.port` | number | 8080 | HTTP server port |
+| `copilotProxy.port` | number | 4141 | HTTP server port |
 | `copilotProxy.autoStart` | boolean | true | Start server on VS Code launch |
 | `copilotProxy.defaultModel` | string | "" | Default model when not specified |
 

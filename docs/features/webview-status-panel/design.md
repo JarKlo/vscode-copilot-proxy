@@ -25,7 +25,7 @@ Use `vscode.window.createWebviewPanel()` to create an on-demand panel that opens
 ┌─────────────────────────────────────┐
 │  Copilot Proxy                      │
 ├─────────────────────────────────────┤
-│  ● Running on port 8080    [Stop]   │
+│  ● Running on port 4141    [Stop]   │
 │  ○ Stopped                 [Start]  │
 ├─────────────────────────────────────┤
 │  Models (3)                         │

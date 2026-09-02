@@ -10,7 +10,7 @@ All settings are prefixed with `copilotProxy.` in VS Code settings.
 
 | Setting | Type | Default | Description |
 |---------|------|---------|-------------|
-| `port` | number | 8080 | Server port |
+| `port` | number | 4141 | Server port |
 | `autoStart` | boolean | true | Start on activation |
 | `defaultModel` | string | "" | Default model ID |
 | `logRequestsToUI` | boolean | false | Show requests in UI |
@@ -24,7 +24,7 @@ All settings are prefixed with `copilotProxy.` in VS Code settings.
 ### copilotProxy.port
 
 **Type:** `number`
-**Default:** `8080`
+**Default:** `4141`
 **Range:** 1-65535
 
 The port number the HTTP proxy server listens on.
@@ -188,7 +188,7 @@ Settings are defined in `package.json` under `contributes.configuration`:
       "properties": {
         "copilotProxy.port": {
           "type": "number",
-          "default": 8080,
+          "default": 4141,
           "description": "Port number for the proxy server"
         }
         // ... other settings
