@@ -1818,15 +1818,17 @@ async function startServer(): Promise<void> {
 
     server.on('error', (error: NodeJS.ErrnoException) => {
         if (error.code === 'EADDRINUSE') {
-            logError(`Port ${port} is already in use`, error);
-            vscode.window.showErrorMessage(`Port ${port} is already in use. Try a different port or close other VS Code instances.`);
+            log(`Port ${port} in use (another VS Code instance is serving), skipping`, 'info');
+            server = null;
+            updateStatusBar(port);
+            updateStatusPanel();
         } else {
             logError('Failed to start server', error);
             vscode.window.showErrorMessage(`Failed to start server: ${error.message}`);
+            server = null;
+            updateStatusBar();
+            updateStatusPanel();
         }
-        server = null;
-        updateStatusBar();
-        updateStatusPanel();
     });
 }
 
@@ -2795,11 +2797,13 @@ export function activate(context: vscode.ExtensionContext): void {
         })
     );
 
-    // Listen for model changes
+    // Listen for model changes (debounced -- Copilot fires rapid bursts)
+    let refreshDebounce: ReturnType<typeof setTimeout> | undefined;
     context.subscriptions.push(
         vscode.lm.onDidChangeChatModels(() => {
             log('Chat models changed, refreshing...');
-            refreshModels();
+            if (refreshDebounce) { clearTimeout(refreshDebounce); }
+            refreshDebounce = setTimeout(() => { refreshModels(); }, 500);
         })
     );
 

@@ -320,8 +320,12 @@ interface ErrorResponse {
 ### Common Error Scenarios
 
 1. **No models available**: Copilot not installed or not authenticated
-2. **Port in use**: Another process using configured port
+2. **Port in use**: Another VS Code instance already owns the server on this port -- this instance silently skips startup (info log, no error popup). Client requests still reach the existing server.
 3. **Model not found**: Requested model doesn't exist
+
+### Multi-Instance Behavior
+
+When multiple VS Code windows are open with this extension, only the first instance starts the HTTP server. Subsequent instances detect the port is already bound and skip their own server. All instances share the same Copilot backend (`vscode.lm`), so any instance's proxy can serve requests to the running server.
 
 ## Security Considerations
 
