@@ -1,0 +1,219 @@
+[
+  {
+    "vendor": "customendpoint",
+    "name": "Copilot Proxy",
+    "apiType": "chat-completions",
+    "baseUrl": "http://127.0.0.1:8080/v1",
+    "apiKey": "SYZKpOXfarQpbXPtC78o35PHMOINgx8X1R6z3LLaZyI",
+    "models": [
+      {
+        "id": "claude-opus-5",
+        "name": "Claude Opus 5 — 500/2500 cr/1M | Deep reasoning",
+        "maxInputTokens": 935793,
+        "maxOutputTokens": 16384,
+        "toolCalling": true,
+        "vision": true,
+        "thinking": true,
+        "supportsReasoningEffort": ["low", "medium", "high", "xhigh", "max"],
+        "reasoningEffortFormat": "chat-completions"
+      },
+      {
+        "id": "claude-opus-4.8",
+        "name": "Claude Opus 4.8 — 500/2500 cr/1M | Deep reasoning",
+        "maxInputTokens": 935793,
+        "maxOutputTokens": 16384,
+        "toolCalling": true,
+        "vision": true,
+        "thinking": true,
+        "supportsReasoningEffort": ["low", "medium", "high", "xhigh", "max"],
+        "reasoningEffortFormat": "chat-completions"
+      },
+      {
+        "id": "claude-opus-4.7",
+        "name": "Claude Opus 4.7 — 500/2500 cr/1M | Deep reasoning",
+        "maxInputTokens": 935793,
+        "maxOutputTokens": 16384,
+        "toolCalling": true,
+        "vision": true,
+        "thinking": true,
+        "supportsReasoningEffort": ["low", "medium", "high", "xhigh", "max"],
+        "reasoningEffortFormat": "chat-completions"
+      },
+      {
+        "id": "claude-sonnet-5",
+        "name": "Claude Sonnet 5 — 200/1000 cr/1M | General-purpose",
+        "maxInputTokens": 935793,
+        "maxOutputTokens": 16384,
+        "toolCalling": true,
+        "vision": true,
+        "thinking": true,
+        "supportsReasoningEffort": ["low", "medium", "high", "xhigh", "max"],
+        "reasoningEffortFormat": "chat-completions"
+      },
+      {
+        "id": "claude-sonnet-4.6",
+        "name": "Claude Sonnet 4.6 — 300/1500 cr/1M | General-purpose",
+        "maxInputTokens": 935793,
+        "maxOutputTokens": 16384,
+        "toolCalling": true,
+        "vision": true,
+        "thinking": true,
+        "supportsReasoningEffort": ["low", "medium", "high", "xhigh", "max"],
+        "reasoningEffortFormat": "chat-completions"
+      },
+      {
+        "id": "gpt-5.6-terra",
+        "name": "GPT-5.6 Terra — 200/1200 cr/1M | Balanced coding",
+        "maxInputTokens": 921793,
+        "maxOutputTokens": 100000,
+        "toolCalling": true,
+        "vision": true,
+        "thinking": true,
+        "supportsReasoningEffort": ["low", "medium", "high", "xhigh"],
+        "reasoningEffortFormat": "chat-completions"
+      },
+      {
+        "id": "gpt-5.6-sol",
+        "name": "GPT-5.6 Sol — 200/1000 cr/1M | Deep reasoning ⚡50% off",
+        "maxInputTokens": 921793,
+        "maxOutputTokens": 100000,
+        "toolCalling": true,
+        "vision": true,
+        "thinking": true,
+        "supportsReasoningEffort": ["low", "medium", "high", "xhigh", "max"],
+        "reasoningEffortFormat": "chat-completions"
+      },
+      {
+        "id": "gpt-5.6-luna",
+        "name": "GPT-5.6 Luna — 20/120 cr/1M | Fast & cheap",
+        "maxInputTokens": 921793,
+        "maxOutputTokens": 100000,
+        "toolCalling": true,
+        "vision": true,
+        "thinking": true,
+        "supportsReasoningEffort": ["low", "medium", "high"],
+        "reasoningEffortFormat": "chat-completions"
+      },
+      {
+        "id": "gpt-5.5",
+        "name": "GPT-5.5 — 500/3000 cr/1M | Complex reasoning",
+        "maxInputTokens": 921793,
+        "maxOutputTokens": 100000,
+        "toolCalling": true,
+        "vision": true,
+        "thinking": true,
+        "supportsReasoningEffort": ["low", "medium", "high", "xhigh"],
+        "reasoningEffortFormat": "chat-completions"
+      },
+      {
+        "id": "gpt-5.4",
+        "name": "GPT-5.4 — 250/1500 cr/1M | Multi-step problems",
+        "maxInputTokens": 921793,
+        "maxOutputTokens": 100000,
+        "toolCalling": true,
+        "vision": true,
+        "thinking": true,
+        "supportsReasoningEffort": ["low", "medium", "high"],
+        "reasoningEffortFormat": "chat-completions"
+      },
+      {
+        "id": "gpt-5.4-mini",
+        "name": "GPT-5.4 mini — 75/450 cr/1M | Agentic coding",
+        "maxInputTokens": 271790,
+        "maxOutputTokens": 100000,
+        "toolCalling": true,
+        "vision": true,
+        "thinking": true,
+        "supportsReasoningEffort": ["low", "medium", "high"],
+        "reasoningEffortFormat": "chat-completions"
+      },
+      {
+        "id": "gpt-5.3-codex",
+        "name": "GPT-5.3-Codex — 175/1400 cr/1M | Agentic LTS",
+        "maxInputTokens": 271790,
+        "maxOutputTokens": 100000,
+        "toolCalling": true,
+        "vision": true,
+        "thinking": true,
+        "supportsReasoningEffort": ["low", "medium", "high"],
+        "reasoningEffortFormat": "chat-completions"
+      },
+      {
+        "id": "gpt-5-mini",
+        "name": "GPT-5 mini — 25/200 cr/1M | General-purpose",
+        "maxInputTokens": 127790,
+        "maxOutputTokens": 16384,
+        "toolCalling": true,
+        "vision": true
+      },
+      {
+        "id": "gemini-3.7-flash",
+        "name": "Gemini 3.7 Flash — 75/375 cr/1M | Fast coding",
+        "maxInputTokens": 935793,
+        "maxOutputTokens": 65536,
+        "toolCalling": true,
+        "vision": true,
+        "thinking": true,
+        "supportsReasoningEffort": ["low", "medium", "high"],
+        "reasoningEffortFormat": "chat-completions"
+      },
+      {
+        "id": "gemini-3.6-flash",
+        "name": "Gemini 3.6 Flash — 75/375 cr/1M | Fast coding",
+        "maxInputTokens": 935793,
+        "maxOutputTokens": 65536,
+        "toolCalling": true,
+        "vision": true,
+        "thinking": true,
+        "supportsReasoningEffort": ["low", "medium", "high"],
+        "reasoningEffortFormat": "chat-completions"
+      },
+      {
+        "id": "gemini-3.5-flash",
+        "name": "Gemini 3.5 Flash — 150/900 cr/1M | Fast coding",
+        "maxInputTokens": 935793,
+        "maxOutputTokens": 65536,
+        "toolCalling": true,
+        "vision": true
+      },
+      {
+        "id": "grok-4.6",
+        "name": "Grok 4.6 — 200/600 cr/1M | General-purpose",
+        "maxInputTokens": 424794,
+        "maxOutputTokens": 32768,
+        "toolCalling": true,
+        "vision": true,
+        "thinking": true,
+        "supportsReasoningEffort": ["low", "medium", "high"],
+        "reasoningEffortFormat": "chat-completions"
+      },
+      {
+        "id": "grok-4.5",
+        "name": "Grok 4.5 — 200/600 cr/1M | General-purpose",
+        "maxInputTokens": 424794,
+        "maxOutputTokens": 32768,
+        "toolCalling": true,
+        "vision": true,
+        "thinking": true,
+        "supportsReasoningEffort": ["low", "medium", "high"],
+        "reasoningEffortFormat": "chat-completions"
+      },
+      {
+        "id": "mai-code-1-flash-picker",
+        "name": "MAI-Code-1-Flash — 75/450 cr/1M | Code completions",
+        "maxInputTokens": 127790,
+        "maxOutputTokens": 16384,
+        "toolCalling": true,
+        "vision": true
+      },
+      {
+        "id": "mai-code-1.1-flash",
+        "name": "MAI-Code-1.1-Flash — 20/120 cr/1M | Code completions",
+        "maxInputTokens": 127790,
+        "maxOutputTokens": 16384,
+        "toolCalling": true,
+        "vision": true
+      }
+    ]
+  }
+]
