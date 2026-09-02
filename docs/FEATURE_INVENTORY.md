@@ -8,6 +8,7 @@ A comprehensive catalog of all features in the VS Code Copilot Proxy extension.
 
 | Date | Feature | Description |
 |------|---------|-------------|
+| 2026-09-02 | Port Silent Skip | When multiple VS Code instances run simultaneously, the second instance silently detects the port is already in use and skips starting its own server instead of erroring. Instance 1 owns the server; instances 2+ are passengers. |
 | 2026-06-09 | Stats by Model | Per-model session/lifetime request breakdown table in webview, shown under the main Stats section; auto-hidden until per-model data exists |
 | 2026-06-09 | Copilot Resilience | Stale-session retry with model refresh, worker-OOM detection with reload prompt, and model-cache TTL refresh to keep idle proxies usable |
 | 2026-05-05 | Stats Section | Session and lifetime request stats (totals, errors, API split, chars, avg duration) shown in webview below Endpoints; lifetime persists in globalState |
